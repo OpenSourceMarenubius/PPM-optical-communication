@@ -1,0 +1,232 @@
+# ARX-01 - Open-Source Optical Communications Receiver Front End
+
+**ARX-01 is an open-source optical communications receiver front end designed for Pulse Position Modulation (PPM) and On-Off Keying (OOK) free-space optical communication systems.**
+
+The project is intended to make practical optical communications hardware accessible to researchers, engineers, students, amateur experimenters, and developers working on photon-limited optical links, satellite communications, and communications in RF-denied or RF-congested environments.
+
+This repository contains the ARX-01 receiver hardware documentation, PCB manufacturing files, bill of materials, assembly information, and preliminary datasheet.
+
+## Overview
+
+Free-space optical communication uses modulated light instead of radio-frequency energy to transfer information between two locations.
+
+Optical links can be useful where:
+
+* RF spectrum is congested
+* RF operation is restricted or undesirable
+* Directional communications are beneficial
+* High link directivity is required
+* Photon-efficient communications are important
+* Experimental satellite or space communications are being developed
+* A license-free optical physical layer is desirable, subject to applicable local safety and regulatory requirements
+
+ARX-01 is being developed as an **open-source optical receiver / analog front end** for these applications.
+
+The receiver is intended to support optical communication waveforms including:
+
+* **Pulse Position Modulation (PPM)**
+* **On-Off Keying (OOK)**
+
+PPM is particularly attractive for photon-limited optical communication because transmitted optical energy can be concentrated into relatively short pulses while information is encoded in the position of those pulses.
+
+## Applications
+
+Possible applications for ARX-01 include:
+
+* Free-space optical communications
+* Laser communications
+* LED optical communications
+* PPM optical communication experiments
+* OOK optical communication experiments
+* Satellite optical communications
+* Ground-to-space optical links
+* Space-to-ground optical links
+* Inter-platform optical communications
+* Photon-limited communication experiments
+* Radio-denied communications
+* RF-congested environments
+* University and laboratory research
+* Amateur optical communication experimentation
+* Optical modem and communication-system development
+
+## ARX-01
+
+ARX-01 is the optical receiver front end in this project.
+
+The hardware is intended to receive a modulated optical signal and provide an electrical signal suitable for subsequent detection, demodulation, timing recovery, or digital processing.
+
+For current electrical, optical, and performance specifications, see:
+
+**[`ARX-01_Preliminary_Datasheet.pdf`](ARX-01_Preliminary_Datasheet.pdf)**
+
+The datasheet should be considered the authoritative source for the current ARX-01 hardware specifications.
+
+## Repository Contents
+
+| File                                  | Description                                                     |
+| ------------------------------------- | --------------------------------------------------------------- |
+| `ARX-01_Preliminary_Datasheet.pdf`    | Preliminary ARX-01 receiver datasheet and technical information |
+| `ARX_4.1.zip`                         | ARX-01 design/source archive                                    |
+| `optical_peripherial_slimmer_BOM.csv` | Bill of materials                                               |
+| `Pick Place for slimmer_pcb2.csv`     | PCB assembly pick-and-place information                         |
+| `top.png`                             | Top-side PCB image                                              |
+| `bottom.png`                          | Bottom-side PCB image                                           |
+| `LICENSE`                             | Repository licensing information                                |
+| `CERN Open Hardware Licence v1.2 .md` | CERN Open Hardware Licence information                          |
+
+## PCB
+
+### Top
+
+![ARX-01 PCB top](top.png)
+
+### Bottom
+
+![ARX-01 PCB bottom](bottom.png)
+
+The included BOM and pick-and-place files are intended to assist with fabrication and assembly of the hardware.
+
+## Building ARX-01
+
+Before manufacturing the board:
+
+1. Read the current `ARX-01_Preliminary_Datasheet.pdf`.
+2. Review the design files contained in `ARX_4.1.zip`.
+3. Check the BOM for component availability and substitutions.
+4. Verify PCB manufacturing requirements.
+5. Verify component orientation and placement against the design files.
+6. Review the current hardware revision before ordering PCBs or assembled boards.
+
+This is an active open-source hardware project. Design files and specifications may change as the receiver is developed and characterized.
+
+## Using ARX-01 in an Optical Communications System
+
+A complete free-space optical communications system normally includes more than the receiver front end.
+
+A simplified receive path is:
+
+**Optical transmitter -> free-space optical channel -> collection optics -> photodetector / ARX-01 receiver front end -> signal processing -> PPM/OOK demodulation -> recovered data**
+
+System performance depends on many parameters beyond the receiver itself, including:
+
+* Transmitter optical power
+* Transmit optics
+* Receiver aperture
+* Optical wavelength
+* Beam divergence
+* Pointing accuracy
+* Atmospheric loss
+* Background light
+* Detector characteristics
+* Receiver bandwidth
+* Modulation format
+* PPM order
+* Pulse width
+* Symbol rate
+* Detection threshold
+* Error-correction coding
+* Signal-processing implementation
+
+Users designing complete links should perform an optical link budget for their intended application.
+
+## Pulse Position Modulation
+
+Pulse Position Modulation encodes information according to the location of an optical pulse within a defined symbol interval.
+
+For an M-ary PPM system, each symbol contains multiple possible pulse positions, with the selected position carrying information.
+
+PPM is commonly considered for power-limited and photon-limited optical communications because it can provide high peak-to-average optical power and good photon efficiency.
+
+ARX-01 is intended to provide a practical open-hardware receiver front end for experimentation with these types of optical links.
+
+## On-Off Keying
+
+ARX-01 can also be used in optical systems employing On-Off Keying.
+
+In a basic OOK link, the presence or absence of optical energy represents transmitted information.
+
+OOK can be useful for simpler optical communication systems, initial link testing, hardware characterization, and applications where the additional timing complexity of PPM is unnecessary.
+
+## Open-Source Optical Communications
+
+One goal of this project is to reduce the barrier to experimenting with real optical communication hardware.
+
+Much of the equipment used for high-performance free-space optical and laser communications is specialized or proprietary. Publishing the receiver design, manufacturing information, and technical documentation makes it possible for others to:
+
+* Build the hardware
+* Characterize it independently
+* Modify the design
+* Develop compatible optical transmitters
+* Develop PPM and OOK demodulators
+* Experiment with coding and synchronization
+* Perform optical link tests
+* Use the design for education and research
+* Contribute improvements back to the project
+
+If you build or modify ARX-01, documenting your results can help the wider open-source optical communications community.
+
+## Contributing
+
+Contributions are welcome.
+
+Useful contributions include:
+
+* Receiver characterization
+* Sensitivity measurements
+* Noise measurements
+* Bandwidth measurements
+* Optical link test results
+* PPM demodulation implementations
+* OOK demodulation implementations
+* FPGA implementations
+* Microcontroller implementations
+* DSP implementations
+* PCB improvements
+* Mechanical designs
+* Enclosures
+* Optical interfaces
+* Documentation improvements
+* Example optical link budgets
+* Satellite optical communications experiments
+
+Please use GitHub Issues to document problems, measurements, proposed changes, or compatibility information.
+
+## Research and Experimental Use
+
+ARX-01 is open hardware intended for experimentation, development, and research.
+
+Performance of a complete optical communications link depends on the transmitter, receiver, optics, environment, implementation, and operating conditions.
+
+Users should independently verify that the hardware is suitable for their application.
+
+## Optical and Laser Safety
+
+**Always follow appropriate optical and laser safety practices.**
+
+Invisible infrared radiation can be particularly hazardous because the human eye may not provide a visible warning or normal blink response.
+
+The ARX-01 receiver itself is only one part of an optical communications system; optical transmitters used with it may present eye or equipment hazards.
+
+Users are responsible for appropriate safety analysis, laser classification, operating procedures, and compliance with applicable regulations.
+
+## License
+
+This repository contains both an Apache License 2.0 license file and a CERN Open Hardware Licence v1.2 file.
+
+Please review the applicable license files in the repository before copying, modifying, manufacturing, or redistributing project material.
+
+## Project Status
+
+ARX-01 is under active development.
+
+The current datasheet is explicitly preliminary, so users should check the repository for the latest revision before manufacturing hardware or relying on a particular specification.
+
+## Keywords
+
+ARX-01, ARX-1, optical communications, optical communication receiver, optical receiver, optical front end, analog optical front end, free-space optical communications, FSO, laser communications, laser communication receiver, photodetector receiver, photodiode receiver, Pulse Position Modulation, PPM receiver, PPM optical communications, On-Off Keying, OOK receiver, photon-limited communications, photon-efficient communications, satellite optical communications, space optical communications, open-source optical communications, open-source hardware, open hardware optical receiver.
+
+---
+
+**Project:** OpenSourceMarenubius / PPM-optical-communication
+
+If you use ARX-01 in a project, experiment, publication, or optical link, consider opening an Issue or contributing your results so other developers can learn from them.
